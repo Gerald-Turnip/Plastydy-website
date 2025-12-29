@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLASTYDY | Official Site</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'plastydy-yellow': '#FFD000', /* Electric Yellow */
+                        'plastydy-blue': '#0a192f',   /* Deep Navy */
+                        'plastydy-dark': '#020c1b',   /* Almost Black */
+                    },
+                    fontFamily: {
+                        'rock': ['Oswald', 'sans-serif'],
+                        'body': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Foo Fighters style full-screen background */
+        .hero-bg {
+            background-image: url('images/background_plastydy.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Dark overlay to ensure text readability */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(10, 25, 47, 0.9));
+            z-index: -1;
+        }
+
+        .nav-link {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #FFD000;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a192f; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFD000; 
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <div class="hero-bg"></div>
+    <div class="overlay"></div>
+
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-rock font-bold tracking-widest text-white hover:text-plastydy-yellow transition">
+                PLASTYDY<span class="text-plastydy-yellow">.</span>
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#" class="nav-link text-white hover:text-plastydy-yellow transition">Home</a>
+                <a href="#music" class="nav-link text-white hover:text-plastydy-yellow transition">Music</a>
+                <a href="#tour" class="nav-link text-white hover:text-plastydy-yellow transition">Tour</a>
+                <a href="#store" class="nav-link text-white hover:text-plastydy-yellow transition">Store</a>
+                
+                <div class="border-l border-gray-600 pl-6 flex space-x-4">
+                    <a href="#" class="text-white hover:text-plastydy-yellow transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white hover:text-plastydy-yellow transition"><i class="fab fa-spotify"></i></a>
+                    <a href="#" class="text-white hover:text-plastydy-yellow transition"><i class="fab fa-youtube"></i></a>
+                </div>
+            </nav>
+
+            <button class="md:hidden text-white text-2xl hover:text-plastydy-yellow">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col justify-center items-center pt-24 px-4 pb-12 w-full max-w-7xl mx-auto">
+        
+        <div class="w-full grid lg:grid-cols-2 gap-12 items-center mt-10 lg:mt-0">
+            
+            <div class="order-1 lg:order-1 relative group">
+                <div class="relative overflow-hidden rounded-xl border-2 border-white/10 shadow-2xl">
+                    <img src="images/artist_photo_plastydy.png" 
+                         alt="Plastydy Band" 
+                         class="w-full object-cover transform group-hover:scale-105 transition duration-700 ease-in-out">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-plastydy-blue/90 to-transparent opacity-60"></div>
+                    
+                    <div class="absolute bottom-6 left-6">
+                        <h2 class="font-rock text-5xl md:text-7xl font-bold uppercase leading-none">
+                            New<br><span class="text-plastydy-yellow">Era</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div id="music" class="order-2 lg:order-2 w-full max-w-xl mx-auto lg:mr-0">
+                
+                <div class="mb-4 text-center lg:text-left">
+                    <h3 class="font-rock text-plastydy-yellow tracking-[0.3em] uppercase text-sm font-bold mb-2">Latest Release</h3>
+                    <h2 class="font-rock text-4xl md:text-5xl font-bold text-white mb-6">THE BLUE TAPES</h2>
+                </div>
+
+                <div class="bg-plastydy-blue/80 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-2xl ring-1 ring-white/5">
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-6">
+                        
+                        <div class="relative w-32 h-32 flex-shrink-0 group">
+                            <img src="images/album_artwork_plastydy.png" 
+                                 alt="Album Artwork" 
+                                 class="w-full h-full object-cover rounded-lg shadow-lg border border-white/10 group-hover:opacity-80 transition">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none rounded-lg"></div>
+                        </div>
+
+                        <div class="flex-grow w-full flex flex-col justify-center">
+                            
+                            <div class="flex justify-between items-end mb-3">
+                                <div>
+                                    <h3 id="track-title" class="font-rock font-bold text-xl text-white tracking-wider uppercase">Neon Nights</h3>
+                                    <p class="text-xs text-gray-400 font-body tracking-widest uppercase mt-1">Plastydy</p>
+                                </div>
+                                <span id="track-time" class="text-xs text-plastydy-yellow font-mono">0:00</span>
+                            </div>
+                            
+                            <audio id="main-audio"></audio>
+                            
+                            <div class="w-full bg-black/50 h-2 rounded-full overflow-hidden cursor-pointer mb-5 group">
+                                <div id="progress-bar" class="bg-plastydy-yellow h-full w-[35%] shadow-[0_0_10px_#FFD000] group-hover:bg-white transition-all duration-300"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between sm:justify-start sm:gap-8">
+                                <button class="text-gray-500 hover:text-white transition"><i class="fas fa-random"></i></button>
+                                
+                                <div class="flex items-center gap-6">
+                                    <button class="text-gray-400 hover:text-white transition transform hover:-translate-x-1">
+                                        <i class="fas fa-step-backward text-xl"></i>
+                                    </button>
+                                    
+                                    <button onclick="toggleFakePlay(this)" class="w-14 h-14 rounded-full bg-plastydy-yellow text-plastydy-dark flex items-center justify-center hover:scale-110 hover:bg-white transition duration-300 shadow-lg shadow-yellow-500/20">
+                                        <i class="fas fa-play text-lg pl-1"></i>
+                                    </button>
+                                    
+                                    <button class="text-gray-400 hover:text-white transition transform hover:translate-x-1">
+                                        <i class="fas fa-step-forward text-xl"></i>
+                                    </button>
+                                </div>
+
+                                <button class="text-gray-500 hover:text-white transition"><i class="fas fa-volume-up"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-white/5">
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center text-sm text-plastydy-yellow cursor-pointer">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-play text-xs"></i>
+                                    <span class="font-bold tracking-wide">1. NEON NIGHTS</span>
+                                </div>
+                                <span class="opacity-80">3:42</span>
+                            </li>
+                            <li class="flex justify-between items-center text-sm text-gray-400 hover:text-white cursor-pointer transition">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-xs opacity-50">2</span>
+                                    <span class="tracking-wide">STATIC NOISE</span>
+                                </div>
+                                <span class="opacity-50">2:55</span>
+                            </li>
+                            <li class="flex justify-between items-center text-sm text-gray-400 hover:text-white cursor-pointer transition">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-xs opacity-50">3</span>
+                                    <span class="tracking-wide">BLUE HORIZON</span>
+                                </div>
+                                <span class="opacity-50">4:10</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-xs tracking-widest uppercase relative z-10">
+        &copy; 2024 PLASTYDY. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Simple visual toggle for the play button to make it feel alive
+        function toggleFakePlay(btn) {
+            const icon = btn.querySelector('i');
+            const bar = document.getElementById('progress-bar');
+            
+            if (icon.classList.contains('fa-play')) {
+                icon.classList.remove('fa-play', 'pl-1');
+                icon.classList.add('fa-pause');
+                // Visual effect: make bar full width slowly
+                bar.style.transition = "width 10s linear";
+                bar.style.width = "60%";
+            } else {
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play', 'pl-1');
+                bar.style.transition = "none"; // stop animation
+            }
+        }
+    </script>
+</body>
+</html>
